@@ -1,0 +1,71 @@
+<html>
+<head>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="new.css">
+  <title>Drone Simulation</title>
+
+
+</head>
+<body>
+<h3 class="w3-hide-medium w3-hide-small w3-black w3-xxxlarge w3-center">DroneEDGE: <span id="map-name"></span></h3>
+<form id="form">
+</form>
+<div class="container">
+
+  <div class="buttonsDiv">
+    <button class="simButton w3-button w3-white w3-hover-green" id="start_button" type="button" value="START" onclick="start()">START
+    </button>
+    <button class="simButton w3-button w3-white w3-hover-red" id="stop_button" type="button" value="STOP" onclick="stop()">STOP
+    </button>
+    <button class="simButton w3-button w3-white w3-hover-orange" id="restart_button" type="button" value="RESTART" onclick="reset()">
+      RESET
+    </button>
+
+  </div>
+
+    <svg id="canvas" class="containerSvg">
+      <g id="map">
+      </g>
+      <g id="legends">
+        <circle class="capture" cx="60" cy="470" r="10"/>
+        <text x="80" y="475">Capture point (CP)</text>
+        <circle cx="330" cy="470" r="10"/>
+        <text x="350" y="475">Guide-Point</text>
+      </g>
+    </svg>
+
+
+    <div class="w3-left w3-margin">
+      <a href="Homepage.html" class="w3-button w3-white w3-border w3-border-red w3-round-large  w3-xlarge ">Home</a>
+      <a href="index.html"  class="w3-button w3-white w3-border w3-border-red w3-round-large  w3-xlarge ">Map List</a>
+    </div>
+
+</div>
+  <div class="statusDiv">
+  <text class="statusContainer  "   id="current-status">Current Status: <g id="status_display"></g></text>
+  <div class="  w3-center card">
+
+  <p class=" w3-center">Gauge Image</p>
+  <img id="default-image" class="gaugeImg" src="https://www.linkpicture.com/q/icon_1.jpg"/>
+  <div class="readings">
+    <p class=" w3-left">Reading: <span id="reading">-</span></p>
+    <p class=" w3-left">Unit: <span id="unit">-</span></p>
+
+  </div>
+  <button id="notify_button" onclick="notify()" disabled="disabled" type="button" class="button button1 w3-border  w3-border-red">Notify</button>
+</div>
+</div>
+
+<script>
+  const mapSVG = sessionStorage.getItem('selected_map');
+  document.getElementById('map').innerHTML = mapSVG;
+  const mapName = window.location.search.match(/mapName=(.*\b)/)?.[1];
+  document.getElementById('map-name').innerText = decodeURI(mapName ?? '');
+  
+  
+</script>
+<script type="text/javascript" src="index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,314 @@
+.section{
+  display:flex;
+  justify-content:flex-end;
+}
+
+.container_maps {
+    display: flex;
+    flex-direction: row;
+}
+
+.container_map {
+    position: relative;
+    margin: 8px;
+}
+
+.container_map * {
+    user-select: none;
+}
+
+.container_map .map_title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    display: block;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.canvas_thumb {
+    height: 420px;
+    width: 400px;
+    display: flex;
+    justify-content:flex-start;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.canvas_thumb g {
+    transform: scale(0.78);
+}
+
+.containerSvg {
+    height: 500px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 560px;
+    padding: 10px;
+    margin: 5px;
+
+    background-color: #f1f1f1;
+
+}
+
+.container {
+    display:inline-block;
+    /* justify-content:flex-start;
+    align-items:flex-start; */
+    float: left;
+    width: 50%;
+    padding: 20px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.buttonsDiv{
+  margin: 5px;
+  background-color: #f1f1f1;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  display: flex;
+  justify-content: space-around;
+}
+
+.simButton{
+  margin: 10px;
+}
+
+.statusDiv{
+  padding: 20px;
+}
+
+.statusContainer{
+  background-color: #f1f1f1;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  margin: 5px;
+  font-size: 20px;
+
+
+}
+
+
+.card {
+  float: left;
+  margin-top: 10px;
+  width: 50%;
+  height: 500px;
+  background-color: #f1f1f1;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+.buttons-container button {
+  /* margin: 10px 0 0 10px;
+  width: 100%;
+  height: 30px;
+   */
+  user-select: none;
+}
+
+.item {
+  margin: 10px 0 0 10px;
+  width: calc(30% - 5px);
+  
+  background-color: #f1f1f1;
+ 
+}
+.items-container {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 10px 0 0 0;
+  padding: 0 10px 10px 0;
+  height: calc(65vh - 90px);
+  
+  background-color:#FFFFFF;
+}
+
+.btn{
+  position: absolute;
+  left:85%;
+  top:90%;
+  transform: translate(-50%,-80%);
+  width: 110px;
+  font-size: 12px;
+  padding: 5px 15px;
+  color:white;
+  background-color: #085915;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+}
+.btn:hover,.btn:focus{
+  background-color: #fd0707 ;
+  transition: 500ms ease-in;
+  border: 5px solid #ec0707;
+}
+
+line {
+    stroke-width: 2;
+    stroke: rgb(4, 4, 38);
+}
+circle
+{
+    fill:rgb(79, 13, 179)
+}
+.circle{
+    fill: rgb(79, 13, 179);
+}
+.capture {
+    fill: red !important;
+
+}
+circle.current {
+    r: 20;
+}
+line.current {
+    stroke-width: 5;
+}
+path.current{
+  stroke-width: 5;
+}
+h2{
+    text-align: center;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 16px;
+}
+
+.button:disabled, .button:disabled:hover {
+    background-color: lightgrey;
+    color: black;
+    border-color: lightgrey;
+}
+
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.readings{
+display: flex;
+flex-direction: column;
+padding: 20px;
+font-size: 20px;
+font-weight: bold;
+}
+
+.readings p{
+margin: 0px;
+padding: 0px;
+}
+.referenceCircle{
+  display: flex;
+flex-direction: column;
+}
+
+.gaugeImg{
+  width:400px;
+  height:300px;
+  object-fit: contain;
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+
+.containerSvg {
+    height: 500px;
+    width: 465px;
+    padding: 10px;
+    margin: 5px;
+
+    background-color: #f1f1f1;
+
+}
+
+.card {
+  width: 50%;
+  height: 500px;
+}
+
+.gaugeImg{
+  width: 300px;
+  height: 300px;
+}
+}
+
+@media screen and (min-width: 1440px) {
+
+.containerSvg {
+    height: 500px;
+    width: 670px;
+    padding: 10px;
+    margin: 5px;
+
+    background-color: #f1f1f1;
+
+}
+
+.card {
+  height: 500px;
+}
+
+.gaugeImg{
+  width: 300px;
+  height: 300px;
+}
+
+.canvas_thumb {
+    height: 420px;
+    width: 470px;
+}
+.canvas_thumb g {
+    transform: scale(0.9);
+}
+
+
+}
+
+@media screen and (max-width: 768px) {
+
+.containerSvg {
+    height: 500px;
+    width: 440px;
+    padding: 10px;
+    margin: 5px;
+
+    background-color: #f1f1f1;
+
+}
+
+.card {
+  float: left;
+  width: 50%;
+  height: 500px;
+
+}
+}
